@@ -15,6 +15,12 @@ import br.com.mhc.mhcws.models.CEP;
 import br.com.mhc.mhcws.models.CEPJSON;
 import br.com.mhc.mhcws.util.Types;
 
+/**
+ * @WebService
+ * @author Matheus Castiglioni
+ * Classe responsável por retornar o endereço de um determinado CEP
+ * @ReturnTypes JSON, XML
+ */
 @Path("cep")
 public class CEPResource {
 	
