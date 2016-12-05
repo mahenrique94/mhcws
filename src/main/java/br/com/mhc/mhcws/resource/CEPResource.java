@@ -31,24 +31,43 @@ public class CEPResource {
 	@Path("find/{cep}/json")
 	@Produces(MediaType.APPLICATION_JSON)
 	public String findToJSON(@PathParam("cep") String cep) {
-		CEPJSON json = new CEPJSON(getJsonToCEP(cep));
-		CEP obj = getGson().fromJson(json.validate().getJson(), CEP.class);
+		CEP obj = getGson().fromJson(getNewCEPJSON(cep).validate().getJson(), CEP.class);
 		return getGson().toJson(obj);
+	}
+	
+	@GET
+	@Path("find/{cep}/json/upper")
+	@Produces(MediaType.APPLICATION_JSON)
+	public String findToJSONUpper(@PathParam("cep") String cep) {
+		CEP obj = getGson().fromJson(getNewCEPJSON(cep).validate().getJson(), CEP.class);
+		return getGson().toJson(obj.toUpper());
 	}
 	
 	@GET
 	@Path("find/{cep}/json/simple")
 	@Produces(MediaType.APPLICATION_JSON)
 	public String findToJSONSimple(@PathParam("cep") String cep) {
-		CEPJSON json = new CEPJSON(getJsonToCEP(cep));
-		CEP obj = getGson().fromJson(json.validate().simple().getJson(), CEP.class);
+		CEP obj = getGson().fromJson(getNewCEPJSON(cep).validate().simple().getJson(), CEP.class);
 		return getGson().toJson(obj);
+	}
+	
+	@GET
+	@Path("find/{cep}/json/simple/upper")
+	@Produces(MediaType.APPLICATION_JSON)
+	public String findToJSONSimpleUpper(@PathParam("cep") String cep) {
+		CEP obj = getGson().fromJson(getNewCEPJSON(cep).validate().simple().getJson(), CEP.class);
+		return getGson().toJson(obj.toUpper());
 	}
 	
 	private String getJsonToCEP(String cep) {
 		Client client = ClientBuilder.newClient();
 		WebTarget target = client.target(FROM);
 		return target.path("/ws/" + cep + "/" + Types.JSON.getType()).request().get(String.class);
+	}
+	
+	private CEPJSON getNewCEPJSON(String cep) {
+		CEPJSON json = new CEPJSON(getJsonToCEP(cep));
+		return json;
 	}
 	
 	private Gson getGson() {

@@ -55,4 +55,14 @@ public class CEP implements Serializable {
 		this.estado = estado;
 	}
 	
+	public CEP toUpper() {
+		setCep(getCep().toUpperCase());
+		setLogradouro(getLogradouro().toUpperCase());
+		setComplemento(getComplemento().toUpperCase());
+		setBairro(getBairro().toUpperCase());
+		setCidade(getCidade().toUpperCase());
+		setEstado(getEstado().toUpperCase());
+		return this;
+	}
+	
 }
