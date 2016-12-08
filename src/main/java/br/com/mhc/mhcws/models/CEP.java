@@ -2,9 +2,12 @@ package br.com.mhc.mhcws.models;
 
 import java.io.Serializable;
 
+import br.com.mhc.mhcws.util.States;
+
 public class CEP implements Serializable {
 
 	private Integer codibge;
+	private Integer codestado;
 	private String cep;
 	private String logradouro;
 	private String complemento;
@@ -17,6 +20,12 @@ public class CEP implements Serializable {
 	}
 	public void setCodibge(Integer codibge) {
 		this.codibge = codibge;
+	}
+	public Integer getCodestado() {
+		return codestado;
+	}
+	public void setCodestado(Integer codestado) {
+		this.codestado = codestado;
 	}
 	public String getCep() {
 		return cep;
@@ -62,6 +71,11 @@ public class CEP implements Serializable {
 		setBairro(getBairro().toUpperCase());
 		setCidade(getCidade().toUpperCase());
 		setEstado(getEstado().toUpperCase());
+		return this;
+	}
+	
+	public CEP addCodEstado() {
+		setCodestado(States.FIND.getStateCod(getEstado()));
 		return this;
 	}
 	

@@ -33,7 +33,7 @@ public class CEPResource {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response findToJSON(@PathParam("cep") String cep) {
 		CEP obj = getGson().fromJson(getNewCEPJSON(cep).validate().getJson(), CEP.class);
-		return buildResponse(getGson().toJson(obj));
+		return buildResponse(getGson().toJson(obj.addCodEstado()));
 	}
 	
 	@GET
