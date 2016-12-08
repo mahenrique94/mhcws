@@ -41,7 +41,7 @@ public class CEPResource {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response findToJSONUpper(@PathParam("cep") String cep) {
 		CEP obj = getGson().fromJson(getNewCEPJSON(cep).validate().getJson(), CEP.class);
-		return buildResponse(getGson().toJson(obj.toUpper()));
+		return buildResponse(getGson().toJson(obj.addCodEstado().toUpper()));
 	}
 	
 	@GET
@@ -49,7 +49,7 @@ public class CEPResource {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response findToJSONSimple(@PathParam("cep") String cep) {
 		CEP obj = getGson().fromJson(getNewCEPJSON(cep).validate().simple().getJson(), CEP.class);
-		return buildResponse(getGson().toJson(obj));
+		return buildResponse(getGson().toJson(obj.addCodEstado()));
 	}
 	
 	@GET
@@ -57,7 +57,7 @@ public class CEPResource {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response findToJSONSimpleUpper(@PathParam("cep") String cep) {
 		CEP obj = getGson().fromJson(getNewCEPJSON(cep).validate().simple().getJson(), CEP.class);
-		return buildResponse(getGson().toJson(obj.toUpper()));
+		return buildResponse(getGson().toJson(obj.addCodEstado().toUpper()));
 	}
 	
 	private String getJsonToCEP(String cep) {
