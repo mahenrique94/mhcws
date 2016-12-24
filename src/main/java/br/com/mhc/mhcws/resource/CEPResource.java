@@ -20,44 +20,43 @@ import br.com.mhc.mhcws.util.Types;
  * @WebService
  * @author Matheus Castiglioni
  * Classe responsável por retornar o endereço de um determinado CEP
- * @ReturnTypes JSON, XML
+ * @ReturnTypes JSON
  */
 @Path("cep")
-public class CEPResource {
+public class CEPResource extends GenericResource {
 	
 	private final static String FROM = "http://viacep.com.br";
-	private final Gson gson = new Gson();
 
 	@GET
 	@Path("find/{cep}/json")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response findToJSON(@PathParam("cep") String cep) {
-		CEP obj = getGson().fromJson(getNewCEPJSON(cep).validate().getJson(), CEP.class);
-		return buildResponse(getGson().toJson(obj.addCodEstado()));
+		CEP obj = super.getGson().fromJson(getNewCEPJSON(cep).validate().getJson(), CEP.class);
+		return super.buildResponse(super.getGson().toJson(obj.addCodEstado()));
 	}
 	
 	@GET
 	@Path("find/{cep}/json/upper")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response findToJSONUpper(@PathParam("cep") String cep) {
-		CEP obj = getGson().fromJson(getNewCEPJSON(cep).validate().getJson(), CEP.class);
-		return buildResponse(getGson().toJson(obj.addCodEstado().toUpper()));
+		CEP obj = super.getGson().fromJson(getNewCEPJSON(cep).validate().getJson(), CEP.class);
+		return super.buildResponse(super.getGson().toJson(obj.addCodEstado().toUpper()));
 	}
 	
 	@GET
 	@Path("find/{cep}/json/simple")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response findToJSONSimple(@PathParam("cep") String cep) {
-		CEP obj = getGson().fromJson(getNewCEPJSON(cep).validate().simple().getJson(), CEP.class);
-		return buildResponse(getGson().toJson(obj.addCodEstado()));
+		CEP obj = super.getGson().fromJson(getNewCEPJSON(cep).validate().simple().getJson(), CEP.class);
+		return super.buildResponse(super.getGson().toJson(obj.addCodEstado()));
 	}
 	
 	@GET
 	@Path("find/{cep}/json/simple/upper")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response findToJSONSimpleUpper(@PathParam("cep") String cep) {
-		CEP obj = getGson().fromJson(getNewCEPJSON(cep).validate().simple().getJson(), CEP.class);
-		return buildResponse(getGson().toJson(obj.addCodEstado().toUpper()));
+		CEP obj = super.getGson().fromJson(getNewCEPJSON(cep).validate().simple().getJson(), CEP.class);
+		return super.buildResponse(super.getGson().toJson(obj.addCodEstado().toUpper()));
 	}
 	
 	private String getJsonToCEP(String cep) {
@@ -69,22 +68,6 @@ public class CEPResource {
 	private CEPJSON getNewCEPJSON(String cep) {
 		CEPJSON json = new CEPJSON(getJsonToCEP(cep));
 		return json;
-	}
-	
-	private Response buildResponse(String json) {
-		return Response
-				.status(200)
-				.header("Access-Control-Allow-Origin", "*")
-				.header("Access-Control-Allow-Headers", "origin, content-type, accept, authorization")
-				.header("Access-Control-Allow-Credentials", "true")
-				.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
-				.header("Access-Control-Max-Age", "1209600")
-				.entity(json)
-				.build();
-	}
-	
-	private Gson getGson() {
-		return this.gson;
 	}
 	
 }
