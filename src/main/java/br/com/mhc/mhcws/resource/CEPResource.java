@@ -36,14 +36,6 @@ public class CEPResource extends GenericResource {
 	}
 	
 	@GET
-	@Path("find/{cep}/json/upper")
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response findToJSONUpper(@PathParam("cep") String cep) {
-		CEP obj = super.getGson().fromJson(getNewCEPJSON(cep).validate().getJson(), CEP.class);
-		return super.buildResponse(super.getGson().toJson(obj.addCodEstado().toUpper()));
-	}
-	
-	@GET
 	@Path("find/{cep}/json/simple")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response findToJSONSimple(@PathParam("cep") String cep) {
@@ -59,14 +51,16 @@ public class CEPResource extends GenericResource {
 		return super.buildResponse(super.getGson().toJson(obj.addCodEstado().toUpper()));
 	}
 	
-	private String getJsonToCEP(String cep) {
-		Client client = ClientBuilder.newClient();
-		WebTarget target = client.target(FROM);
-		return target.path("/ws/" + cep + "/" + Types.JSON.getType()).request().get(String.class);
+	@GET
+	@Path("find/{cep}/json/upper")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response findToJSONUpper(@PathParam("cep") String cep) {
+		CEP obj = super.getGson().fromJson(getNewCEPJSON(cep).validate().getJson(), CEP.class);
+		return super.buildResponse(super.getGson().toJson(obj.addCodEstado().toUpper()));
 	}
 	
 	private CEPJSON getNewCEPJSON(String cep) {
-		CEPJSON json = new CEPJSON(getJsonToCEP(cep));
+		CEPJSON json = new CEPJSON(super.getJsonFrom(FROM, "/ws/" + cep + "/" + Types.JSON.getType()));
 		return json;
 	}
 	
