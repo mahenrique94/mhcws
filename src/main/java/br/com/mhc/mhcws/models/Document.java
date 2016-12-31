@@ -2,7 +2,7 @@ package br.com.mhc.mhcws.models;
 
 import java.io.Serializable;
 
-public class CPF implements Serializable {
+public class Document implements Serializable {
 	
 	private String formatado;
 	private String desformatado;
@@ -10,12 +10,12 @@ public class CPF implements Serializable {
 	private int segundoDigito;
 	private boolean valido;
 	
-	public CPF(br.com.mhc.cpf.CPF cpf) {
-		setFormatado(cpf.format());
-		setDesformatado(cpf.unformat());
-		setPrimeiroDigito(cpf.getFirstDigit());
-		setSegundoDigito(cpf.getSecondDigit());
-		setValido(cpf.isValid());
+	public Document(br.com.mhc.document.Document document) {
+		setFormatado(document.format());
+		setDesformatado(document.unformat());
+		setPrimeiroDigito(document.getFirstDigit());
+		setSegundoDigito(document.getSecondDigit());
+		setValido(document.isValid());
 	}
 
 	public String getFormatado() {

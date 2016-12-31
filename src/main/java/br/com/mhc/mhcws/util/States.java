@@ -46,12 +46,12 @@ public enum States {
 		this.codigo = codigo;
 	}
 	
-	public int getStateCod(String uf) {
+	public Integer getStateCod(String uf) {
 		for (States state : States.values()) {
 			if (state.getUf().equals(uf))
 				return state.getCodigo();
 		}
-		return 0;
+		return null;
 	}
 	
 }
