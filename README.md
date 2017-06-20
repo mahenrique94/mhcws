@@ -9,4 +9,4 @@ URL base do projeto:
 ws.matheuscastiglioni.com.br
 ```
 
-Para saber como realizar e consumir os serviços veja a [documentação](mhcws.matheuscastiglioni.com.br).
+Para saber como realizar e consumir os serviços veja a [documentação](http://mhcws.matheuscastiglioni.com.br).
