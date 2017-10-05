@@ -15,6 +15,20 @@ public class CEP implements Serializable {
 	private String cidade;
 	private String estado;
 	
+	public CEP() {
+		// TODO Auto-generated constructor stub
+	}
+	public CEP(Integer codibge, Integer codestado, String cep, String logradouro, String complemento, String bairro, String cidade, String estado) {
+		this.codibge = codibge;
+		this.codestado = codestado;
+		this.cep = cep;
+		this.logradouro = logradouro;
+		this.complemento = complemento;
+		this.bairro = bairro;
+		this.cidade = cidade;
+		this.estado = estado;
+	}
+	
 	public Integer getCodibge() {
 		return codibge;
 	}
