@@ -29,8 +29,21 @@ http://ws.matheuscastiglioni.com.br/ws/document/cnpj/information/61646949000158/
 <br/>
 <br/>
 
+### Buscando dados de um CNPJ
+```http
+http://ws.matheuscastiglioni.com.br/ws/document/cnpj/data/61646949000158/json
+```
+
+#### Resposta
+```JSON
+{"cnpj":"61.646.949/0001-58","nomefantasia":"Atena Informatica ","razaosocial":"Atena Informatica Ltda - Epp ","endereco":{"codibge":3530706,"codestado":35,"cep":"13843-191","logradouro":"Rua Itatiba","complemento":"","bairro":"Jardim Itacolomi","cidade":"Mogi Guaçu","estado":"SP"}}
+```
+
+<br/>
+<br/>
+
 ### Buscando dados de um CNPJ sem acento
-```text
+```http
 http://ws.matheuscastiglioni.com.br/ws/document/cnpj/data/61646949000158/json/simple
 ```
 
@@ -43,7 +56,7 @@ http://ws.matheuscastiglioni.com.br/ws/document/cnpj/data/61646949000158/json/si
 <br/>
 
 ### Buscando dados de um CNPJ com letras maisuculas
-```text
+```http
 http://ws.matheuscastiglioni.com.br/ws/document/cnpj/data/61646949000158/json/upper
 ```
 
@@ -55,21 +68,8 @@ http://ws.matheuscastiglioni.com.br/ws/document/cnpj/data/61646949000158/json/up
 <br/>
 <br/>
 
-### Buscando um CEP sem acentos e com letras maisuculas
-```text
-http://ws.matheuscastiglioni.com.br/ws/cep/find/13845373/json/simple/upper
-```
-
-#### Resposta
-```JSON
-{"codibge":3530706,"codestado":35,"cep":"13845-373","logradouro":"RUA CAIAPOS","complemento":"","bairro":"JARDIM IGACABA","cidade":"MOGI GUACU","estado":"SP"}
-```
-
-<br/>
-<br/>
-
 ### Buscando dados de um CNPJ sem acentos e com letras maisuculas
-```text
+```http
 http://ws.matheuscastiglioni.com.br/ws/document/cnpj/data/61646949000158/json/simple/upper
 ```
 

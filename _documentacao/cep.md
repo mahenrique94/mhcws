@@ -43,7 +43,7 @@ http://ws.matheuscastiglioni.com.br/ws/cep/find/13845373/json/simple
 <br/>
 
 ### Buscando um CEP com letras maisuculas
-```text
+```http
 http://ws.matheuscastiglioni.com.br/ws/cep/find/13845373/json/upper
 ```
 
@@ -56,7 +56,7 @@ http://ws.matheuscastiglioni.com.br/ws/cep/find/13845373/json/upper
 <br/>
 
 ### Buscando um CEP sem acentos e com letras maisuculas
-```text
+```http
 http://ws.matheuscastiglioni.com.br/ws/cep/find/13845373/json/simple/upper
 ```
 
