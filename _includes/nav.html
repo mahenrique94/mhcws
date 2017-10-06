@@ -1,0 +1,5 @@
+<ul class="o-nav__list">
+    {% for nav in include.nav %}
+        <li class="o-nav__item"><a class="o-nav__link" href="{{ nav.link }}" title="{{ nav.name }}">{{ nav.name }}</a></li>
+    {% endfor %}
+</ul>

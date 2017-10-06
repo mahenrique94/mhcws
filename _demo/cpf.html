@@ -1,0 +1,20 @@
+---
+layout: page
+title: Demo / CPF
+---
+
+<h3>Busca de CPF em funcionamento</h3>
+
+<form class="o-form">
+    <section class="o-form__body">
+        <div class="l-row" role="row">
+            <div class="u-grid--12" role="grid">
+                <label class="o-form__text" for="cpf">CPF<span class="o-form__feedback"></span></label>
+                <div class="o-form__iconed">
+                    <input class="o-form__data" data-cpf="cpf" id="cnpj" maxlength="14" name="cpf" onblur="checkDocument('CPF', this);" onkeypress="checkMask(event);" onkeyup="mask(maskCpf, this, event);" type="text" value="">
+                    <span class="o-form__icon is-hide"><i class="icon-spin3"></i></span>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>

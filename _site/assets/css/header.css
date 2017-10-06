@@ -1,0 +1,40 @@
+.o-header {
+    align-items: center;
+    display: flex;
+    border-bottom: var(--border);
+    grid-area: header;
+    justify-content: space-between;
+    padding: 0 var(--padding);
+}
+.o-header__title {
+    height: 100%;
+    line-height: var(--headerHeight);
+}
+.o-header__title::before {
+    content: "#";
+    color: var(--colorPrimary);
+    margin-right: .5rem;
+}
+.o-header__link {
+    color: #595959;
+    font-weight: 700;
+}
+.o-header__menu {
+    background: transparent;
+    border: none;
+    color: var(--colorPrimary);
+    font-size: 1.7rem;
+}
+.o-header__sourceCode {
+    background: var(--colorPrimary);
+    box-shadow: inset 0 0 10px 2px rgba(255, 255, 255, .75);
+    color: var(--colorText);
+    padding: .5rem 2rem;
+    position: absolute;
+    right: -60px;
+    text-align: center;
+    text-transform: uppercase;
+    top: 25px;
+    transform: rotate(30deg);
+    width: 250px;
+}

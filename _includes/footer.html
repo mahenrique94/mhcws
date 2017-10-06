@@ -1,0 +1,13 @@
+<footer class="o-footer">
+    <div class="o-footer__author">
+        <span class="o-footer__author___development">Desenvolvido por</span>
+        <span class="o-footer__author___name"><a href="http://www.matheuscastiglioni.com.br" target="_blank">{{ site.autor }}</a></span>
+        <span class="o-footer__author___separator">-</span>
+        <span class="o-footer__author___blog"><a href="http://blog.matheuscastiglioni.com.br" target="_blank">Blog</a></span>
+    </div>
+    <ul class="o-footer__list">
+        {% for project in include.project %}
+        <li class="o-footer__item"><a href="{{ project.link }}" class="o-footer__link">{{ project.name }}</a></li>
+        {% endfor %}
+    </ul>
+</footer>

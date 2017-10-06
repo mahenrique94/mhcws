@@ -1,0 +1,18 @@
+.o-footer {
+    align-items: center;
+    background: #F7F7F7;
+    display: flex;
+    grid-area: footer;
+    justify-content: space-between;
+    padding: 0 var(--padding);
+}
+.o-footer__list {
+    margin: 0;
+    padding: 0;
+}
+.o-footer__item {
+    display: inline-block;
+}
+.o-footer__link {
+    padding-left: .5rem;
+}

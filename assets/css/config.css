@@ -1,0 +1,28 @@
+:root {
+    /***** COLORS *****/
+    --colorBorder: #E5E5E5;
+    --colorPrimary: #33CCCC;
+    --colorText: #FDFDFD;
+
+    /***** DIMEN *****/
+    --asideWidth: 25%;
+    --footerHeight: 50px;
+    --headerHeight: 100px;
+    --padding: 2rem;
+    --pageWidth: 75%;
+
+    /***** STYLES *****/
+    --border: 1px solid var(--colorBorder);
+}
+
+.o-body {
+    display: grid;
+    color: #595959;
+    font-family: Arial, sans-serif;
+    grid-template-areas:
+            "aside header"
+            "aside main"
+            "aside footer";
+    grid-template-rows: var(--headerHeight) auto var(--footerHeight);
+    overflow: hidden;
+}

@@ -1,0 +1,12 @@
+/Users/matheus/workspace/mhcws/src/main/java/br/com/mhc/mhcws/models/CEP.java
+/Users/matheus/workspace/mhcws/src/main/java/br/com/mhc/mhcws/models/CNPJ.java
+/Users/matheus/workspace/mhcws/src/main/java/br/com/mhc/mhcws/models/DocumentEletronic.java
+/Users/matheus/workspace/mhcws/src/main/java/br/com/mhc/mhcws/resource/DocumentEletronicResource.java
+/Users/matheus/workspace/mhcws/src/main/java/br/com/mhc/mhcws/models/Document.java
+/Users/matheus/workspace/mhcws/src/main/java/br/com/mhc/mhcws/util/Types.java
+/Users/matheus/workspace/mhcws/src/main/java/br/com/mhc/mhcws/models/CNPJJSON.java
+/Users/matheus/workspace/mhcws/src/main/java/br/com/mhc/mhcws/resource/CEPResource.java
+/Users/matheus/workspace/mhcws/src/main/java/br/com/mhc/mhcws/resource/GenericResource.java
+/Users/matheus/workspace/mhcws/src/main/java/br/com/mhc/mhcws/resource/DocumentResource.java
+/Users/matheus/workspace/mhcws/src/main/java/br/com/mhc/mhcws/models/CEPJSON.java
+/Users/matheus/workspace/mhcws/src/main/java/br/com/mhc/mhcws/util/States.java

@@ -1,0 +1,25 @@
+# Information
+autor: Matheus Castiglioni
+baseurl: ""
+description: "Documentação do projeto MHCWS"
+email: matheushcastiglioni@gmail.com
+projectname: mhcws
+projecturl: https://github.com/mahenrique94/mhcws
+title: "MHCWS"
+url: mhcws.matheuscastiglioni.com.br
+
+# Configuration
+collections:
+  demo:
+    output: true
+    permalink: /:collection/:name
+  documentacao:
+    output: true
+    permalink: /:collection/:name
+  pagina:
+    output: true
+    permalink: /:collection/:name
+css:
+layout: "page"
+js:
+static_files: "assets/"

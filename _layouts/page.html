@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1" name="viewport"/>
+    <title>{{ site.title }}{% if page.title != site.title %}&nbsp;|&nbsp;{{ page.title }}{% endif %}</title>
+    <link href="/assets/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/prism/prism.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/stilize/stilize.min.css" rel="stylesheet" type="text/css">
+    <link href="/{{ site.css }}" rel="stylesheet" type="text/css">
+    <link href="/assets/css/responsive.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/normalize.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/reset.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/config.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/page.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/header.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/aside.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/nav.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/footer.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/override.css" rel="stylesheet" type="text/css">
+</head>
+<body class="o-body">
+    {% include header.html %}
+    {% include aside.html nav = site.data.nav social = site.data.social %}
+    <main class="o-content">
+        {{ content }}
+    </main>
+    {% include footer.html project = site.data.project %}
+    <script src="/assets/js/prism/prism.js" type="text/javascript"></script>
+    <script src="/assets/js/stilize/stilize.min.js" type="text/javascript"></script>
+    <script src="/assets/js/jlib/http.js" type="text/javascript"></script>
+    <script src="/assets/js/jlib/jlib.js" type="text/javascript"></script>
+    <script src="/assets/js/jlib/mask.js" type="text/javascript"></script>
+    <script src="/assets/js/jlib/services.js" type="text/javascript"></script>
+    <script src="/{{ site.js }}" type="text/javascript"></script>
+    <script src="/assets/js/responsive.js" type="text/javascript"></script>
+</body>
+</html>

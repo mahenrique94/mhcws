@@ -1,0 +1,17 @@
+- name: CEP
+  link: /demo/cep
+
+- name: CNPJ
+  link: /demo/cnpj
+
+- name: CPF
+  link: /demo/cpf
+
+- name: CTE
+  link: /demo/cte
+
+- name: MDFE
+  link: /demo/mdfe
+
+- name: NFE
+  link: /demo/nfe
