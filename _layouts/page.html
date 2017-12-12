@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1" name="viewport"/>
+    <meta content="_75dHIyh0o2uKMOuK3hX15MxRFDJaal-sjq1b3omfXI" name="google-site-verification" />
     <title>{{ site.title }}{% if page.title != site.title %}&nbsp;|&nbsp;{{ page.title }}{% endif %}</title>
     <link href="/assets/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="/assets/css/prism/prism.css" rel="stylesheet" type="text/css">
@@ -26,6 +27,14 @@
         {{ content }}
     </main>
     {% include footer.html project = site.data.project %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-72562570-7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-72562570-7');
+    </script>
     <script src="/assets/js/prism/prism.js" type="text/javascript"></script>
     <script src="/assets/js/stilize/stilize.min.js" type="text/javascript"></script>
     <script src="/assets/js/jlib/http.js" type="text/javascript"></script>
